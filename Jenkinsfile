@@ -46,7 +46,7 @@ pipeline {
             steps {
                 echo 'deploying...'
                 // Add your deployment commands here
-                sh 'npx vercel --prod --confirm --token=%VERCEL_TOKEN%'
+                sh 'npx vercel --prod --confirm --token=$VERCEL_TOKEN'
             }
         }
     
