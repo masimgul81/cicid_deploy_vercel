@@ -30,7 +30,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                    export NODE_OPTIONS="--max-old-space-size=2048"
+                    export NODE_OPTIONS="--max-old-space-size=1024"
                     npm run build --standalone
                 '''
             }
@@ -46,7 +46,7 @@ pipeline {
             steps {
                 echo 'deploying...'
                 // Add your deployment commands here
-                sh 'npx vercel --prod --yes --token=%VERCEL_TOKEN%'
+                sh 'npx vercel --prod --confirm --token=%VERCEL_TOKEN%'
             }
         }
     
