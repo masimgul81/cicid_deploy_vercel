@@ -25,7 +25,7 @@ pipeline {
                 // Add your deployment commands here
                 bat 'npm run build'
             }
-            
+        }
         stage('Deploy') {
             steps {
                 echo 'deploying...'
@@ -33,13 +33,6 @@ pipeline {
                 bat 'npx vercel --prod --yes --token=%VERCEL_TOKEN%'
             }
         }
-    }
-
-    post {
-        always {
-            echo 'Cleaning up...'
-            // Add cleanup commands here
-        }
-    }
+    
 }
 }
