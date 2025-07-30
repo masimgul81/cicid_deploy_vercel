@@ -26,21 +26,21 @@ pipeline {
                 sh 'npm --version'
             }
         }
-        stage('Build') {
-            steps {
-                sh '''
-                    export NODE_OPTIONS="--max-old-space-size=8192"
-                    npm run build --standalone
-                '''
-            }
-        }
         // stage('Build') {
         //     steps {
-        //         echo 'Building...'
-        //         // Add your deployment commands here
-        //         sh 'npm run build'
+        //         sh '''
+        //             export NODE_OPTIONS="--max-old-space-size=8192"
+        //             npm run build --standalone
+        //         '''
         //     }
         // }
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                // Add your deployment commands here
+                sh 'npm run build'
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'deploying...'
