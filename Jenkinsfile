@@ -29,8 +29,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh '''
-                    export NODE_OPTIONS="--max-old-space-size=1024"
+                sh '''         
                     npm run build --standalone
                 '''
             }
@@ -39,7 +38,9 @@ pipeline {
         //     steps {
         //         echo 'Building -- ho ja build0---...'
         //         // Add your deployment commands here
-        //         sh 'npm run build'
+        //         
+        // 
+        // sh 'npm run build'
         //     }
         // }
         stage('Deploy') {
