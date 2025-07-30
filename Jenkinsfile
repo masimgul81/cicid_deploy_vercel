@@ -24,6 +24,7 @@ pipeline {
             steps {
                 sh 'node --version'
                 sh 'npm --version'
+                sh 'npx vercel --version'
             }
         }
         // stage('Build') {
