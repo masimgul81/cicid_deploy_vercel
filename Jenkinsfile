@@ -36,7 +36,7 @@ pipeline {
         // }
         stage('Build') {
             steps {
-                echo 'Building...'
+                echo 'Building -- ho ja build0---...'
                 // Add your deployment commands here
                 sh 'npm run build'
             }
