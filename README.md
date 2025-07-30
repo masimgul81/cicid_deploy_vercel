@@ -13,7 +13,7 @@ pnpm dev
 # or
 bun dev
 
-anything
+anything but commit
 ```
 ### or
 
