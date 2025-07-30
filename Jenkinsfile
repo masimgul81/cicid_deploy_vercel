@@ -29,7 +29,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                    node --max-old-space-size=4096 $(which npm) run build -- --standalone
+                    node --max-old-space-size=4096 $(which npm) run build --standalone
                 '''
             }
         }
