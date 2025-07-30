@@ -19,13 +19,27 @@ pipeline {
                 // Add your test commands here
             }
         }
-        stage('Build') {
+
+        stage('Setup') {
             steps {
-                echo 'Building...'
-                // Add your deployment commands here
-                sh 'npm run build'
+                sh 'node --version'
+                sh 'npm --version'
             }
         }
+        stage('Build') {
+            steps {
+                sh '''
+                    node --max-old-space-size=4096 $(which npm) run build -- --standalone
+                '''
+            }
+        }
+        // stage('Build') {
+        //     steps {
+        //         echo 'Building...'
+        //         // Add your deployment commands here
+        //         sh 'npm run build'
+        //     }
+        // }
         stage('Deploy') {
             steps {
                 echo 'deploying...'
