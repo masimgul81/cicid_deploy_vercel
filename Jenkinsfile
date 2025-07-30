@@ -29,7 +29,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                    node --max-old-space-size=4096 $(which npm) run build --standalone
+                    export NODE_OPTIONS="--max-old-space-size=8192"
+                    npm run build -- --standalone
                 '''
             }
         }
