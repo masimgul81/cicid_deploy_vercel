@@ -27,14 +27,14 @@ pipeline {
                 sh 'npx vercel --version'
             }
         }
-        stage('Build') {
-            steps {
-                sh '''         
-                    npm run build --standalone
-                '''
-            }
-        }
         // stage('Build') {
+        //     steps {
+        //         sh '''         
+        //             npm run build --standalone
+        //         '''
+        //     }
+        // }
+        // // stage('Build') {
         //     steps {
         //         echo 'Building -- ho ja build0---...'
         //         // Add your deployment commands here
